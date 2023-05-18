@@ -28,10 +28,10 @@ class PatientsController extends Controller
     //This function is responsible for getting all patients.
     public function getAllPatients()
     {
-        $patientsData = Patients::join('statuses', 'statuses.id', 'patients.status')
-            ->join('breeds', 'breeds.id', 'patients.breed')
-            ->join('genders', 'genders.id', 'patients.gender')
-            ->join('townships', 'townships.id', 'patients.township')
+        $patientsData = Patients::join('statuses', 'statuses.id', 'patients.status_id')
+            ->join('breeds', 'breeds.id', 'patients.breed_id')
+            ->join('genders', 'genders.id', 'patients.gender_id')
+            ->join('townships', 'townships.id', 'patients.township_id')
             ->select(
                 'patients.*',
                 'statuses.status as status_name',
@@ -49,10 +49,10 @@ class PatientsController extends Controller
     //This function is responsible for getting one specific patient.
     public function getOnePatient($id)
     {
-        $patientData = Patients::where('patients.id', $id)->join('statuses', 'statuses.id', 'patients.status')
-            ->join('breeds', 'breeds.id', 'patients.breed')
-            ->join('genders', 'genders.id', 'patients.gender')
-            ->join('townships', 'townships.id', 'patients.township')
+        $patientData = Patients::where('patients.id', $id)->join('statuses', 'statuses.id', 'patients.status_id')
+            ->join('breeds', 'breeds.id', 'patients.breed_id')
+            ->join('genders', 'genders.id', 'patients.gender_id')
+            ->join('townships', 'townships.id', 'patients.township_id')
             ->select(
                 'patients.*',
                 'statuses.status as status_name',
@@ -61,6 +61,7 @@ class PatientsController extends Controller
                 'townships.township as township_name'
             )
             ->first();
+
         $status = Status::get();
         $breeds = Breeds::get();
         $genders = Genders::get();
@@ -102,14 +103,14 @@ class PatientsController extends Controller
     {
         return $this->validate($request, [
             'name' => 'required',
-            'status' => 'required|numeric|in:1,2,3',
+            'status_id' => 'required|numeric|in:1,2,3',
             'pawrent' => 'required',
-            'breed' => 'required|numeric',
-            'gender' => 'required|numeric|in:1,2',
+            'breed_id' => 'required|numeric',
+            'gender_id' => 'required|numeric|in:1,2',
             'date_of_birth' => 'required',
             'phone' => 'required|numeric',
             'address' => 'required',
-            'township' => 'required|numeric',
+            'township_id' => 'required|numeric',
         ]);
     }
 }

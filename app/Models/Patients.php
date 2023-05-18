@@ -11,13 +11,13 @@ class Patients extends Model
 
     protected $fillable = [
         'name',
-        'status',
+        'status_id',
         'pawrent',
-        'breed',
-        'gender',
+        'breed_id',
+        'gender_id',
         'date_of_birth',
         'phone',
         'address',
-        'township',
+        'township_id',
     ];
 }

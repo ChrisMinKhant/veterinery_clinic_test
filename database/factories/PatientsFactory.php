@@ -21,14 +21,14 @@ class PatientsFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'status' => fake()->numberBetween(1, 3),
+            'status_id' => fake()->numberBetween(1, 3),
             'pawrent' => fake()->name(),
-            'breed' => fake()->numberBetween(1, 20),
-            'gender' => fake()->numberBetween(1, 2),
+            'breed_id' => fake()->numberBetween(1, 20),
+            'gender_id' => fake()->numberBetween(1, 2),
             'date_of_birth' => fake()->date(),
             'phone' => fake()->phoneNumber(),
             'address' => fake()->address(),
-            'township' => fake()->numberBetween(1, 20),
+            'township_id' => fake()->numberBetween(1, 20),
         ];
     }
 }

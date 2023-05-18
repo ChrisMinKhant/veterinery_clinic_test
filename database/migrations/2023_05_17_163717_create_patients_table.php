@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('status');
+            $table->integer('status_id');
             $table->string('pawrent');
-            $table->integer('breed');
-            $table->integer('gender');
+            $table->integer('breed_id');
+            $table->integer('gender_id');
             $table->string('date_of_birth');
             $table->string('phone');
             $table->string('address');
-            $table->integer('township');
+            $table->integer('township_id');
             $table->timestamps();
         });
     }

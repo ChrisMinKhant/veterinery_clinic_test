@@ -20,7 +20,7 @@ class GendersFactory extends Factory
     public function definition(): array
     {
         return [
-            'gender' => 'female',
+            'gender' => 'male',
         ];
     }
 }

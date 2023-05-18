@@ -20,7 +20,7 @@ class StatusFactory extends Factory
     public function definition(): array
     {
         return [
-            'status' => 'done',
+            'status' => 'booked',
         ];
     }
 }
