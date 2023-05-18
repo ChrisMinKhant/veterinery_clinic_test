@@ -21,7 +21,7 @@ class PatientsController extends Controller
         Patients::create($validatedPatientData);
 
         return response()->json([
-            'creatinon_status' => 'Patient Data Has Been Created Successfully!',
+            'creation_status' => 'Patient Data Has Been Created Successfully!',
         ], $status = 200);
     }
 
@@ -83,7 +83,7 @@ class PatientsController extends Controller
         Patients::where('id', $id)->update($validatedPatientData);
 
         return response()->json([
-            'updating_status' => 'Patient Has Been Updated Successfully!',
+            'updating_status' => 'Patient Data Has Been Updated Successfully!',
         ], $status = 200);
     }
 
@@ -93,7 +93,7 @@ class PatientsController extends Controller
         Patients::where('id', $id)->delete();
 
         return response()->json([
-            'deletion_status' => 'Patient Has Been Deleted!',
+            'deletion_status' => 'Patient Data Has Been Deleted!',
         ], $status = 200);
     }
 
